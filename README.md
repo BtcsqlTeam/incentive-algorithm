@@ -12,7 +12,7 @@ BTCSQL引入了活跃度及贡献度来保证分配的公平性，活跃度根�
 
 平台奖励池每24小时进行一次奖励分配，根据计算结果，将奖励的Token自动分发至项目激励池钱包，再由项目激励池分配到个人钱包。项目发起者可以根据自身需求，对项目激励池进行BSQL充值提高当天激励池额度，用大量奖金为自己的项目吸引更多用户关注，这个项目钱包地址是公开、透明的。整体社区每日释放量*Q*为：
 
-![image](http://github.com/Btcsql/incentive-algorithm/raw/master/images/pic1.jpg)
+![image](https://raw.githubusercontent.com/BitsqlTeam/incentive-algorithm/master/images/pic1.png)
 
 *BQ*是截止到分配时当前奖励池余量。
 
@@ -20,13 +20,13 @@ BTCSQL引入了活跃度及贡献度来保证分配的公平性，活跃度根�
 
 为了让项目得到的报酬与项目的活跃度成正比，平台将使用影响到项目活跃的所有已知因子作为项目活跃度的证明，并且根据所有因子设置合理的权重进行换算，如：项目为官方认领状态，项目内容完善程度，项目社区关注数，浏览数量，平均浏览话题数，用户平均在线时长，最高同时在线人数，新关注用户数，项目社区日活，项目社区话题数，项目社区话题发布人数，项目社区点赞数，项目社区点赞人数，项目社区评论数，项目社区评论人数，有效话题数，有效话题发布人数，有效点赞数，有效点赞人数，有效评论数，有效评论人数等数据进行计算，每个项目社区活跃度*S~m~*为：
 
-![image](http://github.com/Btcsql/incentive-algorithm/raw/master/images/pic2.jpg)
+![image](https://raw.githubusercontent.com/BitsqlTeam/incentive-algorithm/master/images/pic2.png)
 
 其中*e*为所有因子个数，*b~i~*代表不同因子的权重。*G~i~*代表项目方社区证明的各个因子通过数据归一化算法后的值。
 
 每日分配数量为*Q*的奖励，将所有已建社区纳入分配范围，进行计算分配，每个项目获得的奖励*Q~m~* 为：
 
-![image](http://github.com/Btcsql/incentive-algorithm/raw/master/images/pic3.jpg)
+![image](https://raw.githubusercontent.com/BitsqlTeam/incentive-algorithm/master/images/pic3.png)
 
 其中*n*是截止到分配时，整个生态内的社区个数。
 
@@ -38,7 +38,7 @@ BTCSQL引入了活跃度及贡献度来保证分配的公平性，活跃度根�
 
 支持者在社区的所有行为都会被纳入等级计算当中，且通过权重比例进行换算，如：点赞，有效点赞，评论，有效评论，发帖，浏览话题，被关注，被点赞，被有效点赞，帖⼦被浏览，帖⼦被评论，话题被有效评论，评论被点赞，评论被有效点赞，评论被回复等等。每个⽤户等级*Ln*为:
 
-![image](http://github.com/Btcsql/incentive-algorithm/raw/master/images/pic4.jpg)
+![image](https://raw.githubusercontent.com/BitsqlTeam/incentive-algorithm/master/images/pic4.png)
 
 其中*Oi*为⽤户单个⾏为的次数通过归⼀算法后的值。
 
@@ -46,22 +46,22 @@ BTCSQL引入了活跃度及贡献度来保证分配的公平性，活跃度根�
 
 用户对每个话题的评论或点赞的权重，与其“松果”相关，简称为*PL*，*PL*越高的用户对话题的权重影响越高，而在话题产生报酬时，回报的奖励也就越高。*PL*值的大小，跟用户锁定的BSQL的数量及活跃度有关。用户获得*PL*除了锁币也可以通过每天在社区活跃来增加，但这个增加的值每天都有上限，当用户解锁BSQL时，平台每周释放1/7的BSQL到用户的账户上，持续7周释放完。但其*PL*也会随之下降。单个用户对评论和点赞行为权重影响*Y~n~*为：
 
-![image](http://github.com/Btcsql/incentive-algorithm/raw/master/images/pic5.jpg)
+![image](https://raw.githubusercontent.com/BitsqlTeam/incentive-algorithm/master/images/pic5.png)
 
 为了防止个别用户*Y~n~*过大而对项目舆论进行操控，拒绝“独裁者”出现。在进行贡献值计算前，平台采用自研"金字塔权力模型“，对用户*Y~n~*二次分配，"金字塔"是统计当前所有用户的*Y~n~*进行正向排序，然后根据排名按照固定百分比人数进行分层，每层拥有全部*Y~n~*固定百分比权限，每层用户在百分比内进行*Y~n~*平均处理。但用户最终报酬还是以*Y~n~*作分配指标，“金字塔”只对权重进行换算。
 
 最终单层单个用户行为权重*Y~nt~*为：
 
-![image](http://github.com/Btcsql/incentive-algorithm/raw/master/images/pic6.jpg)
+![image](https://raw.githubusercontent.com/BitsqlTeam/incentive-algorithm/master/images/pic6.png)
 
 其中*t*为截⽌到分配时，所有用户*Y~n~*因子个数，*w*为层级分配的权重百分比，*e*为用户因子个数，*z*为层级分配的人数百分比。
 
 每天单个用户对项目的贡献度为*C~n~*，以当天范围内单个⽤户的所有行为次数及权重进⾏计算：
 
-![image](http://github.com/Btcsql/incentive-algorithm/raw/master/images/pic7.jpg)
+![image](https://raw.githubusercontent.com/BitsqlTeam/incentive-algorithm/master/images/pic7.png)
 
 其中*k是*去除评论和点赞后的其他因子个数，*b~i~*代表不同因子的权重。*C~%~*为有效主动评论和点赞换算而来的值。*h*是被动点赞和评论行为的因子个数，*ti*代表被动点赞和评论等被动行为不同因子的权重，*l*为被动点赞和评论的因子个数，*r*为反哺贡献值的比例。
 
 项目通过POIA获得的货币奖励*Q~m~*，扣除项目管理者的⽐例，再经过“金字塔”模型处理后，普通用户获得的奖励*q~m~ *为:
 
-![image](http://github.com/Btcsql/incentive-algorithm/raw/master/images/pic8.jpg)
+![image](https://raw.githubusercontent.com/BitsqlTeam/incentive-algorithm/master/images/pic8.png)
